@@ -58,7 +58,12 @@ class TicTacToe {
     }
 
     noMoreTurns() {
-        return this.playField.every(el => el.indexOf(null) == -1);
+        for (let i = 0; i < this.playField.length; i++) {
+            if (this.playField[i].includes(null)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     isDraw() {
